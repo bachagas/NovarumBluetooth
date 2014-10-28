@@ -17,6 +17,20 @@ Please use it at your own risk.
 Right now only connecting as a client is supported. Tested especially for
 connecting bluetooth modules such as JY-MCU
 
+## Building the novarumbluetooth Module
+
+1. Setup the build.properties file according to your environment;
+2. Manually setup the Java libraries path: for some reason, the Titanium Studio for Windows (up to version 3.4.0.201409261227) cannot locate these libs which are necessary for building Android modules. To do that right click your project and go to &gt; Properties &gt; Java Build Path. Edit the android.jar to point to your local Android SDK installation path and the kroll* and titanium.jar to your local Titanium SDK path. (Note: you may also have to manually set your JRE System Library);
+3. Build and package it as an Android Module for the Titanium SDK so it can be available for all projects in your workspace.
+
+## Modify your Titanium project settings
+
+Add the "com.novarum.bluetooth" module to your project editing the "tiapp.xml" file using the Overview tab in the Titanium Studio IDE, or directly adding the &lt;module&gt; tag in &lt;modules&gt; session:
+
+     <modules>
+        <module platform="android">com.novarum.bluetooth</module>
+     </modules>
+
 ## Accessing the novarumbluetooth Module
 
 To access this module from JavaScript, you would do the following:
